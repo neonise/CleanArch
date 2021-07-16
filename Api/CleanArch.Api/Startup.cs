@@ -1,3 +1,4 @@
+using CleanArch.Api.Configurations;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.Ioc;
 using MediatR;
@@ -25,6 +26,8 @@ namespace CleanArch.Api
             DependencyContainer.RegisterServices(services);
 
             services.AddMediatR(typeof(Startup));
+
+            services.RegisterAutoMapper();
 
             services.AddSwaggerGen(x => x.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
             {
